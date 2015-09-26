@@ -26,7 +26,7 @@
 					<textarea id="salida" name="salida" style="width:50%; height:300px; margin: 0 auto; display:block;" disabled>
 					<?php
 						include ('calculate.php');
-						echo "Resultado: \n" . $output;
+						echo "\nResultado: \n" . $output;
 					?>
 					</textarea>
 				</div>
