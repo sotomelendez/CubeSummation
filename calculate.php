@@ -3,7 +3,6 @@
 $_fp = explode("\n",$_POST['entrada']);
 $actualLine = 0;
 
-// $stdout = fopen('php://stdout', 'w');
 $output = "";
 
 $line = $_fp[$actualLine];
@@ -16,17 +15,7 @@ for($i = 0; $i < $iterations; $i++)
     $parts = explode(" ",$line);
     $matrixSize = intval($parts[0]);
     //Inicializo la matriz
-    $matrix = array(array(array_fill(0,$matrixSize,0)));
-    for($a = 0; $a <= $matrixSize; $a++)
-    {
-        for($b = 0; $b <= $matrixSize; $b++)
-        {
-            for($c = 0; $c <= $matrixSize; $c++)
-            {
-                $matrix[$a][$b][$c] = 0;
-            }
-        }
-    }
+    $matrix = array(array(array_fill(1,$matrixSize,0)));
     //Ejecuto las operaciones
     $ops = intval($parts[1]);
     for($j = 0; $j < $ops; $j++)
@@ -58,7 +47,6 @@ for($i = 0; $i < $iterations; $i++)
                     }
                 }
             }
-            // fputs($stdout, strval($sum) . "\n");
 			$output = $output . strval($sum) . "\n";
         }
     }
